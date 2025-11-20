@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<orders>
+  <order id="ORD-100001" date="2025-11-15T10:30:00" status="виконано">
+    <customer>
+      <name>Анна Коваленко</name>
+      <email>anna@example.com</email>
+      <phone>+380671234567</phone>
+      <city>Київ</city>
+      <address>вул. Хрещатик, 10, кв. 5</address>
+    </customer>
+    <items>
+      <item book_id="book_001" quantity="1">
+        <title>Майстер і Маргарита</title>
+        <price>299.00</price>
+        <subtotal>299.00</subtotal>
+      </item>
+      <item book_id="book_007" quantity="1">
+        <title>Clean Code</title>
+        <price>650.00</price>
+        <subtotal>650.00</subtotal>
+      </item>
+    </items>
+    <total>949.00</total>
+    <statusHistory>
+      <statusChange date="2025-11-15T10:30:00" status="нове" comment="Замовлення створено клієнтом"/>
+      <statusChange date="2025-11-15T11:00:00" status="обробляється" comment="Прийнято менеджером в обробку"/>
+      <statusChange date="2025-11-15T16:00:00" status="відправлено" comment="Передано в службу доставки Нова Пошта"/>
+      <statusChange date="2025-11-16T14:00:00" status="виконано" comment="Клієнт отримав замовлення"/>
+    </statusHistory>
+    <notes>Клієнт попросив упакувати книги як подарунок</notes>
+  </order>
+  <order id="ORD-100002" date="2025-11-18T14:15:00" status="відправлено">
+    <customer>
+      <name>Богдан Петренко</name>
+      <email>bogdan@example.com</email>
+      <phone>+380931234567</phone>
+      <city>Львів</city>
+      <address>пр. Свободи, 25, кв. 12</address>
+    </customer>
+    <items>
+      <item book_id="book_002" quantity="2">
+        <title>Тіні забутих предків</title>
+        <price>199.00</price>
+        <subtotal>398.00</subtotal>
+      </item>
+      <item book_id="book_012" quantity="1">
+        <title>Sapiens</title>
+        <price>450.00</price>
+        <subtotal>450.00</subtotal>
+      </item>
+      <item book_id="book_016" quantity="1">
+        <title>Чарівник Смарагдового міста</title>
+        <price>250.00</price>
+        <subtotal>250.00</subtotal>
+      </item>
+    </items>
+    <total>1098.00</total>
+    <statusHistory>
+      <statusChange date="2025-11-18T14:15:00" status="нове" comment="Замовлення створено клієнтом"/>
+      <statusChange date="2025-11-18T15:30:00" status="обробляється" comment="Підтверджено менеджером"/>
+      <statusChange date="2025-11-19T10:00:00" status="відправлено" comment="Відправлено Укрпоштою"/>
+    </statusHistory>
+    <notes>Клієнт просить зателефонувати перед доставкою</notes>
+  </order>
+  <order id="ORD-100003" date="2025-11-19T09:00:00" status="обробляється">
+    <customer>
+      <name>Анна Коваленко</name>
+      <email>anna@example.com</email>
+      <phone>+380671234567</phone>
+      <city>Київ</city>
+      <address>вул. Хрещатик, 10, кв. 5</address>
+    </customer>
+    <items>
+      <item book_id="book_012" quantity="1">
+        <title>Sapiens</title>
+        <price>450.00</price>
+        <subtotal>450.00</subtotal>
+      </item>
+    </items>
+    <total>450.00</total>
+    <statusHistory>
+      <statusChange date="2025-11-19T09:00:00" status="нове" comment="Замовлення створено клієнтом"/>
+      <statusChange date="2025-11-19T10:15:00" status="обробляється" comment="Взято в роботу менеджером"/>
+    </statusHistory>
+    <notes/>
+  </order>
+  <order id="ORD-100004" date="2025-11-19T16:45:00" status="нове">
+    <customer>
+      <name>Богдан Петренко</name>
+      <email>bogdan@example.com</email>
+      <phone>+380931234567</phone>
+      <city>Львів</city>
+      <address>пр. Свободи, 25, кв. 12</address>
+    </customer>
+    <items>
+      <item book_id="book_004" quantity="1">
+        <title>Захар Беркут</title>
+        <price>225.00</price>
+        <subtotal>225.00</subtotal>
+      </item>
+      <item book_id="book_007" quantity="1">
+        <title>Clean Code</title>
+        <price>650.00</price>
+        <subtotal>650.00</subtotal>
+      </item>
+      <item book_id="book_009" quantity="1">
+        <title>Design Patterns</title>
+        <price>780.00</price>
+        <subtotal>780.00</subtotal>
+      </item>
+      <item book_id="book_010" quantity="1">
+        <title>Refactoring</title>
+        <price>690.00</price>
+        <subtotal>690.00</subtotal>
+      </item>
+      <item book_id="book_017" quantity="2">
+        <title>Пригоди Капітана Врунгеля</title>
+        <price>220.00</price>
+        <subtotal>440.00</subtotal>
+      </item>
+    </items>
+    <total>2785.00</total>
+    <statusHistory>
+      <statusChange date="2025-11-19T16:45:00" status="нове" comment="Замовлення створено клієнтом"/>
+    </statusHistory>
+    <notes/>
+  </order>
+  <order id="5" orderNumber="ORD-100005">
+    <customer>
+      <email>olena@example.com</email>
+      <name>Олена Шевченко</name>
+      <phone>+380501234567</phone>
+      <city>Одеса</city>
+      <address>вул. Дерибасівська, 15, кв. 8</address>
+    </customer>
+    <items>
+      <item>
+        <bookId>book_021</bookId>
+        <title>Гаррі Поттер і Філософський камінь</title>
+        <quantity>1</quantity>
+        <price>459.00</price>
+      </item>
+      <item>
+        <bookId>book_030</bookId>
+        <title>Маленький принц</title>
+        <quantity>2</quantity>
+        <price>159.00</price>
+      </item>
+    </items>
+    <totalPrice>777.00</totalPrice>
+    <status>нове</status>
+    <createdAt>2025-11-19T23:16:04.415Z</createdAt>
+    <comment>Подарунок для дитини</comment>
+  </order>
+  <order id="6" orderNumber="ORD-100006">
+    <customer>
+      <email>ivan@example.com</email>
+      <name>Іван Мельник</name>
+      <phone>+380671234568</phone>
+      <city>Харків</city>
+      <address>просп. Науки, 45, кв. 22</address>
+    </customer>
+    <items>
+      <item>
+        <bookId>book_025</bookId>
+        <title>Алгоритми та структури даних</title>
+        <quantity>1</quantity>
+        <price>890.00</price>
+      </item>
+      <item>
+        <bookId>book_028</bookId>
+        <title>Docker в дії</title>
+        <quantity>1</quantity>
+        <price>720.00</price>
+      </item>
+    </items>
+    <totalPrice>1610.00</totalPrice>
+    <status>обробляється</status>
+    <createdAt>2025-11-18T23:16:04.417Z</createdAt>
+    <comment>Терміново, для навчання</comment>
+  </order>
+  <order id="7" orderNumber="ORD-100007">
+    <customer>
+      <email>maria@example.com</email>
+      <name>Марія Бондаренко</name>
+      <phone>+380931234569</phone>
+      <city>Дніпро</city>
+      <address>вул. Робоча, 78, кв. 5</address>
+    </customer>
+    <items>
+      <item>
+        <bookId>book_022</bookId>
+        <title>1984</title>
+        <quantity>1</quantity>
+        <price>279.00</price>
+      </item>
+      <item>
+        <bookId>book_023</bookId>
+        <title>Сто років самотності</title>
+        <quantity>1</quantity>
+        <price>349.00</price>
+      </item>
+      <item>
+        <bookId>book_024</bookId>
+        <title>Гордість і упередження</title>
+        <quantity>1</quantity>
+        <price>269.00</price>
+      </item>
+    </items>
+    <totalPrice>897.00</totalPrice>
+    <status>відправлено</status>
+    <createdAt>2025-11-17T23:16:04.417Z</createdAt>
+    <comment/>
+  </order>
+</orders>

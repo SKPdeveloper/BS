@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель менеджера - Книгарня Онлайн</title>
+    <link rel="stylesheet" href="/css/manager.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-content">
+                <h1 class="logo">⚙️ Панель менеджера</h1>
+                <div class="user-info">
+                    <span class="user-name" id="userName">Менеджер</span>
+                    <a href="/" class="btn-logout">Вийти</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Модальне вікно входу -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <h2>Вхід для менеджера</h2>
+            <p class="modal-subtitle">Введіть логін та пароль</p>
+            <div class="test-credentials">
+                <p><strong>Тестові дані:</strong> manager / manager123</p>
+            </div>
+            <div class="form-group">
+                <label>Логін</label>
+                <input type="text" id="usernameInput" class="input" value="manager">
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" id="passwordInput" class="input" value="manager123">
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="loginBtn">Увійти</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основний контент -->
+    <main class="main">
+        <div class="container-fluid">
+            <!-- Статистика -->
+            <div class="stats-grid">
+                <div class="stat-card purple">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-details">
+                        <div class="stat-value" id="statsBooks">-</div>
+                        <div class="stat-label">Книг у каталозі</div>
+                    </div>
+                </div>
+                <div class="stat-card blue">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-details">
+                        <div class="stat-value" id="statsOrders">-</div>
+                        <div class="stat-label">Замовлень</div>
+                    </div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-details">
+                        <div class="stat-value" id="statsClients">-</div>
+                        <div class="stat-label">Клієнтів</div>
+                    </div>
+                </div>
+                <div class="stat-card orange">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-details">
+                        <div class="stat-value" id="statsRevenue">-</div>
+                        <div class="stat-label">Виручка</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вкладки -->
+            <div class="tabs">
+                <button class="tab active" data-tab="catalog">📚 Каталог книг</button>
+                <button class="tab" data-tab="orders">📦 Замовлення</button>
+                <button class="tab" data-tab="xml">🔧 XML операції</button>
+                <button class="tab" data-tab="history">📜 Історія змін</button>
+            </div>
+
+            <!-- Вкладка: Каталог -->
+            <div class="tab-content active" id="catalogTab">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Управління каталогом</h2>
+                        <button class="btn btn-primary" id="addBookBtn">➕ Додати книгу</button>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Обкладинка</th>
+                                        <th>Назва</th>
+                                        <th>Автор</th>
+                                        <th>Категорія</th>
+                                        <th>Ціна</th>
+                                        <th>Склад</th>
+                                        <th>Дії</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="catalogTableBody">
+                                    <tr>
+                                        <td colspan="8" class="text-center">Завантаження...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вкладка: Замовлення -->
+            <div class="tab-content" id="ordersTab">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Управління замовленнями</h2>
+                        <div class="filters-inline">
+                            <select id="orderStatusFilter" class="select">
+                                <option value="">Всі статуси</option>
+                                <option value="нове">Нові</option>
+                                <option value="обробляється">Обробляються</option>
+                                <option value="відправлено">Відправлені</option>
+                                <option value="виконано">Виконані</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="orders-grid" id="ordersGrid">
+                            <div class="text-center">Завантаження...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вкладка: XML операції -->
+            <div class="tab-content" id="xmlTab">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>🔧 XML операції</h2>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="xml-operations">
+                            <!-- Експорт XML -->
+                            <div class="xml-section">
+                                <h3>📤 Експорт XML</h3>
+                                <p>Завантажити дані у форматі XML</p>
+                                <div class="btn-group">
+                                    <button class="btn btn-success" onclick="window.open('/api/xml/catalog')">
+                                        📄 Експорт каталогу
+                                    </button>
+                                    <button class="btn btn-success" onclick="window.open('/api/xml/orders')">
+                                        📋 Експорт замовлень
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Імпорт XML -->
+                            <div class="xml-section">
+                                <h3>📥 Імпорт XML</h3>
+                                <p>Завантажити каталог з XML файлу</p>
+                                <div class="file-upload">
+                                    <input type="file" id="importXMLFile" accept=".xml" class="file-input">
+                                    <button class="btn btn-primary" id="importXMLBtn">Імпортувати каталог</button>
+                                </div>
+                                <div class="alert" id="importResult"></div>
+                            </div>
+
+                            <!-- Валідація XSD -->
+                            <div class="xml-section">
+                                <h3>✅ Валідація XSD</h3>
+                                <p>Перевірити XML на відповідність XSD схемам</p>
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary" id="validateCatalogBtn">
+                                        Валідувати каталог
+                                    </button>
+                                    <button class="btn btn-secondary" id="validateOrdersBtn">
+                                        Валідувати замовлення
+                                    </button>
+                                </div>
+                                <div class="alert" id="validationResult"></div>
+                            </div>
+
+                            <!-- XSD схеми -->
+                            <div class="xml-section">
+                                <h3>📋 XSD схеми</h3>
+                                <p>Переглянути XSD схеми для валідації</p>
+                                <div class="btn-group">
+                                    <button class="btn btn-text" onclick="window.open('/api/xml/xsd/catalog')">
+                                        Схема каталогу
+                                    </button>
+                                    <button class="btn btn-text" onclick="window.open('/api/xml/xsd/orders')">
+                                        Схема замовлень
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- XSLT трансформації -->
+                            <div class="xml-section">
+                                <h3>🔄 XSLT трансформації</h3>
+                                <p>Переглянути XSLT шаблони для трансформацій</p>
+                                <div class="btn-group">
+                                    <button class="btn btn-text" onclick="window.open('/api/xml/xslt/catalog')">
+                                        catalog.xsl
+                                    </button>
+                                    <button class="btn btn-text" onclick="window.open('/api/xml/xslt/catalog-table')">
+                                        catalog-table.xsl
+                                    </button>
+                                    <button class="btn btn-text" onclick="window.open('/api/xml/xslt/order-receipt')">
+                                        order-receipt.xsl
+                                    </button>
+                                    <button class="btn btn-text" onclick="window.open('/api/xml/xslt/orders-table')">
+                                        orders-table.xsl
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- XML перегляд -->
+                            <div class="xml-section">
+                                <h3>👁️ Перегляд XML</h3>
+                                <p>Переглянути XML документи в браузері</p>
+                                <div class="btn-group">
+                                    <button class="btn btn-info" id="viewCatalogXMLBtn">
+                                        Переглянути каталог
+                                    </button>
+                                    <button class="btn btn-info" id="viewOrdersXMLBtn">
+                                        Переглянути замовлення
+                                    </button>
+                                </div>
+                                <div class="xml-viewer" id="xmlViewer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вкладка: Історія змін -->
+            <div class="tab-content" id="historyTab">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>📜 Історія змін XML</h2>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Дата</th>
+                                        <th>Тип</th>
+                                        <th>Операція</th>
+                                        <th>Користувач</th>
+                                        <th>Деталі</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="historyTableBody">
+                                    <tr>
+                                        <td colspan="5" class="text-center">Історія порожня</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Модальне вікно редагування книги -->
+    <div class="modal" id="editBookModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2 id="editBookTitle">Редагувати книгу</h2>
+                <button class="close-btn" id="closeEditBook">✕</button>
+            </div>
+
+            <form id="bookForm">
+                <input type="hidden" id="bookId">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Назва *</label>
+                        <input type="text" id="bookTitle" class="input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Автор *</label>
+                        <input type="text" id="bookAuthor" class="input" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Категорія *</label>
+                        <select id="bookCategory" class="select" required>
+                            <option value="художня">Художня</option>
+                            <option value="технічна">Технічна</option>
+                            <option value="наукова">Наукова</option>
+                            <option value="дитяча">Дитяча</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>ISBN *</label>
+                        <input type="text" id="bookISBN" class="input" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Ціна (грн) *</label>
+                        <input type="number" id="bookPrice" class="input" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Рік *</label>
+                        <input type="number" id="bookYear" class="input" min="1900" max="2100" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Склад *</label>
+                        <input type="number" id="bookStock" class="input" min="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Опис</label>
+                    <textarea id="bookDescription" class="textarea" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Шлях до зображення</label>
+                    <input type="text" id="bookImage" class="input" placeholder="images/placeholder.jpg">
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-text" id="cancelEditBook">Скасувати</button>
+                    <button type="submit" class="btn btn-primary">Зберегти</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальне вікно деталей замовлення -->
+    <div class="modal" id="orderDetailsModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2 id="orderDetailsTitle">Деталі замовлення</h2>
+                <button class="close-btn" id="closeOrderDetails">✕</button>
+            </div>
+
+            <div id="orderDetailsContent">
+                <!-- Заповнюється через JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Оверлей -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="/js/manager.js"></script>
+</body>
+</html>

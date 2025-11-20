@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід - Книгарня Онлайн</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #42313A 0%, #6C2D2C 50%, #42313A 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: linear-gradient(145deg, #F1DCC9 0%, #faf6f1 100%);
+            border: 3px solid #6C2D2C;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5), inset 0 2px 0 rgba(255, 255, 255, 0.5);
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #42313A;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(159, 70, 54, 0.2);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6C2D2C;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .xml-badge {
+            background: linear-gradient(135deg, #9F4636 0%, #6C2D2C 100%);
+            color: #F1DCC9;
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 2px solid #42313A;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(66, 49, 58, 0.3);
+        }
+
+        .login-section {
+            margin-bottom: 40px;
+        }
+
+        .login-section h2 {
+            color: #42313A;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #9F4636;
+            padding-bottom: 10px;
+        }
+
+        .user-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .user-card {
+            background: linear-gradient(135deg, #faf6f1 0%, #F1DCC9 100%);
+            border: 2px solid #6C2D2C;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(66, 49, 58, 0.15);
+        }
+
+        .user-card:hover {
+            border-color: #9F4636;
+            box-shadow: 0 6px 20px rgba(159, 70, 54, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .user-card.manager {
+            background: linear-gradient(135deg, #9F4636 0%, #6C2D2C 100%);
+            color: #F1DCC9;
+            border: 2px solid #42313A;
+        }
+
+        .user-card.manager:hover {
+            box-shadow: 0 8px 24px rgba(159, 70, 54, 0.5);
+        }
+
+        .user-card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .user-icon {
+            font-size: 3em;
+        }
+
+        .user-name {
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .user-details {
+            margin-left: 60px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .user-details p {
+            margin: 5px 0;
+        }
+
+        .manager .user-details {
+            opacity: 1;
+        }
+
+        .login-btn {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #9F4636 0%, #6C2D2C 100%);
+            color: #F1DCC9;
+            border: 2px solid #42313A;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(66, 49, 58, 0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-btn:hover {
+            background: linear-gradient(135deg, #b35542 0%, #7d3636 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(159, 70, 54, 0.4);
+        }
+
+        .manager .login-btn {
+            background: linear-gradient(135deg, #F1DCC9 0%, #faf6f1 100%);
+            color: #9F4636;
+            border: 2px solid #F1DCC9;
+        }
+
+        .manager .login-btn:hover {
+            background: linear-gradient(135deg, #faf6f1 0%, #F1DCC9 100%);
+            box-shadow: 0 6px 20px rgba(241, 220, 201, 0.5);
+        }
+
+        .features {
+            background: linear-gradient(135deg, rgba(159, 70, 54, 0.1) 0%, rgba(108, 45, 44, 0.1) 100%);
+            border-left: 4px solid #9F4636;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 2px solid #d4b5a0;
+        }
+
+        .features h3 {
+            color: #42313A;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            padding: 8px 0;
+            color: #6C2D2C;
+        }
+
+        .features li:before {
+            content: "🔧 ";
+            margin-right: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .user-card-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .user-details {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center;">
+            <span class="xml-badge">🔧 XML / XSD / XSLT</span>
+        </div>
+
+        <h1>📚 Книгарня Онлайн</h1>
+        <p class="subtitle">Швидкий вхід до системи</p>
+
+        <!-- Клієнти -->
+        <div class="login-section">
+            <h2>👥 Вхід для клієнтів</h2>
+            <div class="user-cards">
+                <div class="user-card" onclick="loginClient('anna@example.com')">
+                    <div class="user-card-header">
+                        <div class="user-icon">👩</div>
+                        <div>
+                            <div class="user-name">Анна Коваленко</div>
+                        </div>
+                    </div>
+                    <div class="user-details">
+                        <p><strong>Email:</strong> anna@example.com</p>
+                        <p><strong>Місто:</strong> Київ</p>
+                        <p><strong>Замовлення:</strong> 2 активні</p>
+                    </div>
+                    <button class="login-btn">Увійти як Анна</button>
+                </div>
+
+                <div class="user-card" onclick="loginClient('bogdan@example.com')">
+                    <div class="user-card-header">
+                        <div class="user-icon">👨</div>
+                        <div>
+                            <div class="user-name">Богдан Петренко</div>
+                        </div>
+                    </div>
+                    <div class="user-details">
+                        <p><strong>Email:</strong> bogdan@example.com</p>
+                        <p><strong>Місто:</strong> Львів</p>
+                        <p><strong>Замовлення:</strong> 2 активні</p>
+                    </div>
+                    <button class="login-btn">Увійти як Богдан</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Менеджер -->
+        <div class="login-section">
+            <h2>⚙️ Вхід для менеджера</h2>
+            <div class="user-cards">
+                <div class="user-card manager" onclick="loginManager()">
+                    <div class="user-card-header">
+                        <div class="user-icon">🔧</div>
+                        <div>
+                            <div class="user-name">Менеджер</div>
+                        </div>
+                    </div>
+                    <div class="user-details">
+                        <p><strong>Логін:</strong> manager</p>
+                        <p><strong>Пароль:</strong> manager123</p>
+                        <p><strong>Доступ:</strong> Повне управління + XML операції</p>
+                    </div>
+                    <button class="login-btn">Увійти як менеджер</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- XML можливості -->
+        <div class="features">
+            <h3>🔧 XML можливості системи</h3>
+            <ul>
+                <li>Експорт каталогу та замовлень у XML</li>
+                <li>Імпорт даних з XML файлів</li>
+                <li>Валідація за XSD схемами</li>
+                <li>XSLT трансформації для відображення</li>
+                <li>Історія змін у XML форматі</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        async function loginClient(email) {
+            try {
+                const response = await fetch('/api/auth/login/client', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    localStorage.setItem('currentUser', JSON.stringify(data.user));
+                    window.location.href = '/catalog';
+                } else {
+                    alert('Помилка входу: ' + data.error);
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('Помилка підключення до сервера');
+            }
+        }
+
+        async function loginManager() {
+            try {
+                const response = await fetch('/api/auth/login/manager', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: 'manager',
+                        password: 'manager123'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    localStorage.setItem('currentManager', JSON.stringify(data.user));
+                    window.location.href = '/manager-panel.html';
+                } else {
+                    alert('Помилка входу: ' + data.error);
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('Помилка підключення до сервера');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(public/images/placeholder.jpg)",
+      "Bash(node server.js:*)",
+      "Bash(public/images/books/README.txt)",
+      "Bash(curl:*)",
+      "Bash(taskkill:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(timeout:*)",
+      "Bash(node add-test-data.js:*)",
+      "Bash(dir:*)",
+      "Bash(nul)",
+      "Bash(tasklist:*)",
+      "Bash(tskill:*)",
+      "Bash(del \"X:\\2025_2\\work_zu\\#4-12516\\BookStore\\BS\\CHANGELOG.md\" \"X:\\2025_2\\work_zu\\#4-12516\\BookStore\\BS\\specification-updated.md\" \"X:\\2025_2\\work_zu\\#4-12516\\BookStore\\BS\\public\\images\\books\\README.txt\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

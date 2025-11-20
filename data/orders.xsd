@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Кореневий елемент -->
+  <xs:element name="orders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="order" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="customer">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="email" type="EmailType"/>
+                    <xs:element name="phone" type="PhoneType"/>
+                    <xs:element name="city" type="xs:string"/>
+                    <xs:element name="address" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="items">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="item" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="title" type="xs:string"/>
+                          <xs:element name="price" type="xs:decimal"/>
+                          <xs:element name="subtotal" type="xs:decimal"/>
+                        </xs:sequence>
+                        <xs:attribute name="book_id" type="xs:string" use="required"/>
+                        <xs:attribute name="quantity" type="xs:positiveInteger" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="total" type="xs:decimal"/>
+              <xs:element name="statusHistory">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="statusChange" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="date" type="xs:dateTime" use="required"/>
+                            <xs:attribute name="status" type="StatusType" use="required"/>
+                            <xs:attribute name="comment" type="xs:string"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="notes" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+            <xs:attribute name="date" type="xs:dateTime" use="required"/>
+            <xs:attribute name="status" type="StatusType" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Користувацькі типи -->
+  <xs:simpleType name="EmailType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[^@]+@[^@]+\.[^@]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PhoneType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\+380\d{9}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="StatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="нове"/>
+      <xs:enumeration value="обробляється"/>
+      <xs:enumeration value="відправлено"/>
+      <xs:enumeration value="виконано"/>
+      <xs:enumeration value="скасовано"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

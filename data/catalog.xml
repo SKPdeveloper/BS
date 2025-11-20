@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+  <book id="book_001" deleted="false">
+    <title>Майстер і Маргарита</title>
+    <author>Михайло Булгаков</author>
+    <category>художня</category>
+    <price currency="UAH">299.00</price>
+    <description>Культовий роман про любов, зраду та боротьбу добра зі злом. Одна з найвідоміших книг XX століття.</description>
+    <isbn>978-5-1712-3456-7</isbn>
+    <year>2020</year>
+    <stock>15</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_002" deleted="false">
+    <title>Тіні забутих предків</title>
+    <author>Михайло Коцюбинський</author>
+    <category>художня</category>
+    <price currency="UAH">199.00</price>
+    <description>Геніальна повість про кохання Івана та Марічки у Карпатах.</description>
+    <isbn>978-9-6660-1234-5</isbn>
+    <year>2019</year>
+    <stock>8</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_003" deleted="false">
+    <title>Маруся</title>
+    <author>Григорій Квітка-Основ'яненко</author>
+    <category>художня</category>
+    <price currency="UAH">179.00</price>
+    <description>Перша українська повість, що розповідає про трагічну долю дівчини Марусі.</description>
+    <isbn>978-9-6661-2345-6</isbn>
+    <year>2018</year>
+    <stock>5</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_004" deleted="false">
+    <title>Захар Беркут</title>
+    <author>Іван Франко</author>
+    <category>художня</category>
+    <price currency="UAH">225.00</price>
+    <description>Історична повість про боротьбу карпатських горян проти монгольської навали.</description>
+    <isbn>978-9-6662-3456-7</isbn>
+    <year>2020</year>
+    <stock>12</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_005" deleted="false">
+    <title>Тигролови</title>
+    <author>Іван Багряний</author>
+    <category>художня</category>
+    <price currency="UAH">189.00</price>
+    <description>Пригодницький роман про втечу з радянського концтабору.</description>
+    <isbn>978-9-6663-4567-8</isbn>
+    <year>2021</year>
+    <stock>7</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_006" deleted="false">
+    <title>Чорна рада</title>
+    <author>Пантелеймон Куліш</author>
+    <category>художня</category>
+    <price currency="UAH">210.00</price>
+    <description>Історичний роман про козацьку добу та внутрішні суперечності.</description>
+    <isbn>978-9-6664-5678-9</isbn>
+    <year>2019</year>
+    <stock>0</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_007" deleted="false">
+    <title>Clean Code</title>
+    <author>Robert Martin</author>
+    <category>технічна</category>
+    <price currency="UAH">650.00</price>
+    <description>Настільна книга кожного програміста про написання чистого та зрозумілого коду.</description>
+    <isbn>978-0-1323-5088-4</isbn>
+    <year>2008</year>
+    <stock>10</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_008" deleted="false">
+    <title>JavaScript: The Good Parts</title>
+    <author>Douglas Crockford</author>
+    <category>технічна</category>
+    <price currency="UAH">550.00</price>
+    <description>Класичний посібник з JavaScript, що розкриває найкращі практики мови.</description>
+    <isbn>978-0-5965-1774-2</isbn>
+    <year>2008</year>
+    <stock>6</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_009" deleted="false">
+    <title>Design Patterns</title>
+    <author>Gang of Four</author>
+    <category>технічна</category>
+    <price currency="UAH">780.00</price>
+    <description>Фундаментальна праця про шаблони проектування в об'єктно-орієнтованому програмуванні.</description>
+    <isbn>978-0-2016-3361-0</isbn>
+    <year>1994</year>
+    <stock>4</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_010" deleted="false">
+    <title>Refactoring</title>
+    <author>Martin Fowler</author>
+    <category>технічна</category>
+    <price currency="UAH">690.00</price>
+    <description>Детальний посібник з рефакторингу коду та покращення його структури.</description>
+    <isbn>978-0-1341-1772-3</isbn>
+    <year>2018</year>
+    <stock>8</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_011" deleted="false">
+    <title>The Pragmatic Programmer</title>
+    <author>Hunt &amp; Thomas</author>
+    <category>технічна</category>
+    <price currency="UAH">720.00</price>
+    <description>Практичні поради для професійного розвитку програміста.</description>
+    <isbn>978-0-1357-8740-1</isbn>
+    <year>2019</year>
+    <stock>0</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_012" deleted="false">
+    <title>Sapiens</title>
+    <author>Yuval Noah Harari</author>
+    <category>наукова</category>
+    <price currency="UAH">450.00</price>
+    <description>Історія людства від появи Homo sapiens до сьогодення.</description>
+    <isbn>978-0-0624-2956-1</isbn>
+    <year>2014</year>
+    <stock>20</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_013" deleted="false">
+    <title>Brief History of Time</title>
+    <author>Stephen Hawking</author>
+    <category>наукова</category>
+    <price currency="UAH">380.00</price>
+    <description>Видатна книга про час, простір та природу Всесвіту.</description>
+    <isbn>978-0-5533-0508-2</isbn>
+    <year>1988</year>
+    <stock>3</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_014" deleted="false">
+    <title>Cosmos</title>
+    <author>Carl Sagan</author>
+    <category>наукова</category>
+    <price currency="UAH">420.00</price>
+    <description>Захоплююча подорож Всесвітом від видатного астрофізика.</description>
+    <isbn>978-0-3454-5939-7</isbn>
+    <year>1980</year>
+    <stock>6</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_015" deleted="false">
+    <title>Selfish Gene</title>
+    <author>Richard Dawkins</author>
+    <category>наукова</category>
+    <price currency="UAH">390.00</price>
+    <description>Революційна книга про еволюцію з точки зору генів.</description>
+    <isbn>978-0-1998-9191-8</isbn>
+    <year>1976</year>
+    <stock>0</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_016" deleted="false">
+    <title>Чарівник Смарагдового міста</title>
+    <author>Олександр Волков</author>
+    <category>дитяча</category>
+    <price currency="UAH">250.00</price>
+    <description>Казкова історія про дівчинку Еллі та її пригоди в чарівній країні.</description>
+    <isbn>978-5-1717-8901-2</isbn>
+    <year>2020</year>
+    <stock>18</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_017" deleted="false">
+    <title>Пригоди Капітана Врунгеля</title>
+    <author>Андрій Некрасов</author>
+    <category>дитяча</category>
+    <price currency="UAH">220.00</price>
+    <description>Веселі морські пригоди капітана Врунгеля та його команди.</description>
+    <isbn>978-5-1718-9012-3</isbn>
+    <year>2019</year>
+    <stock>12</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_018" deleted="false">
+    <title>Незнайко на Місяці</title>
+    <author>Микола Носов</author>
+    <category>дитяча</category>
+    <price currency="UAH">240.00</price>
+    <description>Фантастичні пригоди Незнайка на Місяці.</description>
+    <isbn>978-5-1719-0123-4</isbn>
+    <year>2021</year>
+    <stock>1</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_019" deleted="false">
+    <title>Кобзар</title>
+    <author>Тарас Шевченко</author>
+    <category>художня</category>
+    <price currency="UAH">159.00</price>
+    <description>Безсмертна збірка поезій великого Кобзаря. Класика української літератури.</description>
+    <isbn>978-9-6665-6789-0</isbn>
+    <year>2020</year>
+    <stock>25</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_020" deleted="false">
+    <title>You Don't Know JS</title>
+    <author>Kyle Simpson</author>
+    <category>технічна</category>
+    <price currency="UAH">590.00</price>
+    <description>Глибоке занурення в JavaScript. Серія книг для професіоналів.</description>
+    <isbn>978-1-4919-2473-9</isbn>
+    <year>2015</year>
+    <stock>9</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_021" deleted="false">
+    <title>Гаррі Поттер і Філософський камінь</title>
+    <author>Дж. К. Роулінг</author>
+    <category>дитяча</category>
+    <price currency="UAH">459.00</price>
+    <description>Перша книга легендарної серії про юного чарівника</description>
+    <isbn>978-966-441-000-1</isbn>
+    <year>2021</year>
+    <stock>20</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_022" deleted="false">
+    <title>1984</title>
+    <author>Джордж Орвелл</author>
+    <category>художня</category>
+    <price currency="UAH">279.00</price>
+    <description>Культова антиутопія про тоталітарний режим</description>
+    <isbn>978-617-679-123-4</isbn>
+    <year>2020</year>
+    <stock>18</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_023" deleted="false">
+    <title>Сто років самотності</title>
+    <author>Габріель Гарсія Маркес</author>
+    <category>художня</category>
+    <price currency="UAH">349.00</price>
+    <description>Шедевр магічного реалізму про родину Буендіа</description>
+    <isbn>978-966-923-456-7</isbn>
+    <year>2019</year>
+    <stock>12</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_024" deleted="false">
+    <title>Гордість і упередження</title>
+    <author>Джейн Остін</author>
+    <category>художня</category>
+    <price currency="UAH">269.00</price>
+    <description>Класичний роман про кохання та суспільні стереотипи</description>
+    <isbn>978-617-609-234-5</isbn>
+    <year>2021</year>
+    <stock>14</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_025" deleted="false">
+    <title>Алгоритми та структури даних</title>
+    <author>Роберт Седжвік</author>
+    <category>технічна</category>
+    <price currency="UAH">890.00</price>
+    <description>Фундаментальна книга з алгоритмів</description>
+    <isbn>978-0-321-57351-3</isbn>
+    <year>2020</year>
+    <stock>6</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_026" deleted="false">
+    <title>Фізика для всіх</title>
+    <author>Річард Фейнман</author>
+    <category>наукова</category>
+    <price currency="UAH">520.00</price>
+    <description>Легендарні лекції нобелівського лауреата</description>
+    <isbn>978-966-428-567-8</isbn>
+    <year>2021</year>
+    <stock>10</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_027" deleted="false">
+    <title>Пінокіо</title>
+    <author>Карло Коллоді</author>
+    <category>дитяча</category>
+    <price currency="UAH">189.00</price>
+    <description>Класична казка про дерев'яну ляльку</description>
+    <isbn>978-617-526-890-2</isbn>
+    <year>2020</year>
+    <stock>22</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_028" deleted="false">
+    <title>Docker в дії</title>
+    <author>Джефф Ніколофф</author>
+    <category>технічна</category>
+    <price currency="UAH">720.00</price>
+    <description>Практичний посібник з контейнеризації</description>
+    <isbn>978-1-617-29436-6</isbn>
+    <year>2021</year>
+    <stock>8</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_029" deleted="false">
+    <title>Квантова механіка для початківців</title>
+    <author>Леонард Сасскінд</author>
+    <category>наукова</category>
+    <price currency="UAH">480.00</price>
+    <description>Доступний виклад квантової теорії</description>
+    <isbn>978-0-465-08361-4</isbn>
+    <year>2020</year>
+    <stock>7</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+  <book id="book_030" deleted="false">
+    <title>Маленький принц</title>
+    <author>Антуан де Сент-Екзюпері</author>
+    <category>дитяча</category>
+    <price currency="UAH">159.00</price>
+    <description>Філософська казка про дружбу і любов</description>
+    <isbn>978-966-441-789-5</isbn>
+    <year>2021</year>
+    <stock>30</stock>
+    <image>images/placeholder.jpg</image>
+  </book>
+</catalog>
